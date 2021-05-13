@@ -1,0 +1,34 @@
+<h1 class="text-center">Grupos</h1>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Miembros</th>
+            <th scope="col">Email</th>
+            <th scope="col">Nicks</th>
+            <th scope="col">Telefono</th>
+            <th colspan="3">Botones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @groups.each do |group|%>
+            <tr scope="row">
+                <td><%= group.id %></td>
+                <td><%= group.name %></td>
+                <td><%= group.members %></td>
+                <td><%= group.email %></td>
+                <td><%= group.nick_name %></td>
+                <td><%= group.phone %></td>
+                <td><%= link_to "Ver Grupo", group_path(group), class: 'btn btn-success' %></td>
+                <td><%= link_to "Editar Grupo", group_edit_path(group.id), class: 'btn btn-warning' %></td>
+                <td><%= link_to "Eliminar Grupo", group ,method: :delete, class: 'btn btn-danger' %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to "Crear Nuevo Grupo" , group_new_path, class: 'btn btn-primary'%>
+
