@@ -25,6 +25,11 @@
         <%= f.telephone_field :phone, class: 'form-control' %>
     </div>
     
+    <div class="form-group">
+        <%= f.label :status %>
+        <%= f.select :status, options_for_select(@statuses) %>
+    </div>
+
     <hr>
 
     <%= f.submit "Enviar", class: 'btn btn-primary' %>

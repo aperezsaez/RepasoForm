@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+    enum status: ["Activo", "No activo", "Retirado"]
     before_save :fuera_chadwick
 
     def fuera_chadwick

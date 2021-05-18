@@ -10,6 +10,7 @@
             <th scope="col">Email</th>
             <th scope="col">Nicks</th>
             <th scope="col">Telefono</th>
+            <th scope="col">Estado</th>
             <th colspan="3">Botones</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@
                 <td><%= group.email %></td>
                 <td><%= group.nick_name %></td>
                 <td><%= group.phone %></td>
+                <td><%= group.status %></td>
                 <td><%= link_to "Ver Grupo", group_path(group), class: 'btn btn-success' %></td>
                 <td><%= link_to "Editar Grupo", group_edit_path(group.id), class: 'btn btn-warning' %></td>
                 <td><%= link_to "Eliminar Grupo", group ,method: :delete, class: 'btn btn-danger' %></td>

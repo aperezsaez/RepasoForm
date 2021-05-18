@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'groups#index'
+  get 'groups/index'
   get 'groups', to: 'groups#new', as: 'group_new'
   post 'groups', to: "groups#create"
   get 'groups/:id', to: 'groups#show', as: 'group'
