@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :members
   root 'groups#index'
   get 'groups/index'
   get 'groups', to: 'groups#new', as: 'group_new'

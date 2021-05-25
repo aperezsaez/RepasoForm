@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210517235207) do
+ActiveRecord::Schema.define(version: 20210524233304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.integer "members"
     t.string "email"
     t.string "nick_name"
     t.bigint "phone"
@@ -26,4 +25,14 @@ ActiveRecord::Schema.define(version: 20210517235207) do
     t.integer "status", default: 0
   end
 
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_members_on_group_id"
+  end
+
+  add_foreign_key "members", "groups"
 end

@@ -19,7 +19,11 @@
             <tr scope="row">
                 <td><%= group.id %></td>
                 <td><%= group.name %></td>
-                <td><%= group.members %></td>
+                <td>
+                    <% group.members.each do |m| %>
+                        <%= m %><br>
+                    <% end %>
+                </td>
                 <td><%= group.email %></td>
                 <td><%= group.nick_name %></td>
                 <td><%= group.phone %></td>
